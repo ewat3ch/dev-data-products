@@ -11,11 +11,7 @@ library(leaflet)
 ```
 ## Busiest container ports in Europe'2018 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-CargoShipIcon <- makeIcon(
-  iconUrl = "img/noun_Cargo Ship_334713.png",
-  iconWidth = 31*215/230, iconHeight = 31,
-  iconAnchorX = 31*215/230/2, iconAnchorY = 16
-)
+
 PortSites <- c(
  "<a href='https://en.wikipedia.org/wiki/Port_of_Rotterdam'><img alt='eva' src='img/netherlands.png' width=15 height=20>Port Of Rotterdam</a>",
  "<a href='https://en.wikipedia.org/wiki/Port_of_Antwerp'><img  src='img/belgium.png' width=15 height=20>Port Of Antwerp</a>",

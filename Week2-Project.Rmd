@@ -24,7 +24,7 @@ PortSites <- c(
  "<a href='https://en.wikipedia.org/wiki/Ports_of_Bremen'><img  src='img/germany.png' width=15 height=20>Port Of Bremen</a>",
  "<a href='https://en.wikipedia.org/wiki/Port_of_Valencia'><img  src='img/spain.png' width=15 height=20>Port Of Valencia</a>",
  "<a href='https://en.wikipedia.org/wiki/Port_of_Piraeus'><img  src='img/greece.png' width=15 height=20>Port Of Piraeus</a>",
- "<a href='https://en.wikipedia.org/wiki/Port_of_Algeciras'><img  src='/img/spain.png' width=15 height=20>Port Of Algeciras</a>",
+ "<a href='https://en.wikipedia.org/wiki/Port_of_Algeciras'><img  src='img/spain.png' width=15 height=20>Port Of Algeciras</a>",
  "<a href='https://en.wikipedia.org/wiki/Port_of_Gioia_Tauro'><img  src='img/italy.png' width=15 height=20>Port Of Gioia Tauro</a>",
  "<a href='https://en.wikipedia.org/wiki/Port_of_Felixstowe'><img  src='img//united-kingdom.png' width=15 height=20>Port Of Felixstowe</a>",
  "<a href='https://en.wikipedia.org/wiki/Port_of_Barcelona'><img  src='img/spain.png' width=15 height=20>Port Of Barcelona</a>")

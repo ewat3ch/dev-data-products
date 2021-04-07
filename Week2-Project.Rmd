@@ -1,6 +1,10 @@
 ---
 title: "Top 10 Busiest ports in Europe"
-output: ioslides_presentation
+output: 
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+    css: ["styles.css"]
 author: "Ewa Wesolowska"
 date: "`r Sys.Date()`"
 ---
@@ -9,7 +13,8 @@ date: "`r Sys.Date()`"
 knitr::opts_chunk$set(echo = FALSE)
 library(leaflet)
 ```
-## Busiest container ports in Europe'2018 
+## Busiest container ports in Europe 2018 
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
 PortSites <- c(
@@ -23,11 +28,12 @@ PortSites <- c(
  "<a href='https://en.wikipedia.org/wiki/Port_of_Gioia_Tauro'><img  src='img/italy.png' width=15 height=20>Port Of Gioia Tauro</a>",
  "<a href='https://en.wikipedia.org/wiki/Port_of_Felixstowe'><img  src='img//united-kingdom.png' width=15 height=20>Port Of Felixstowe</a>",
  "<a href='https://en.wikipedia.org/wiki/Port_of_Barcelona'><img  src='img/spain.png' width=15 height=20>Port Of Barcelona</a>")
+
 md_ports <- data.frame(name = c("Rotterdam", "Antwerp", "Hamburg", "Bremen-Bremerhaven",  "Valencia", "Piraeus", "Algeciras", "Gioia Tauro", "Felixstowe", "Barcelona"),
-                        pop = c(13598, 10830, 8741, 5442, 5169, 4910, 4773, 4005, 3781,3442),
-                        lat = c(51.885, 51.27, 53.546111, 53.57, 39.4457, 37.941944, 36.136, 38.433333, 51.954171, 41.3375),
-                        lng = c(4.2867, 4.336667, 9.966111, 8.544, -0.3199, 23.636111, -5.435, 15.9, 1.310158, 2.152222),
-                       col = sample(c("red", "blue", "green"), 10, replace = TRUE))
+                      pop = c(13598, 10830, 8741, 5442, 5169, 4910, 4773, 4005, 3781,3442),
+                      lat = c(51.885, 51.27, 53.546111, 53.57, 39.4457, 37.941944, 36.136, 38.433333, 51.954171, 41.3375),
+                      lng = c(4.2867, 4.336667, 9.966111, 8.544, -0.3199, 23.636111, -5.435, 15.9, 1.310158, 2.152222)
+                       )
 
 md_ports %>%
   leaflet() %>%

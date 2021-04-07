@@ -1,20 +1,11 @@
----
-title: "Top 10 Busiest ports in Europe"
-output: 
-  ioslides_presentation:
-    widescreen: true
-    smaller: true
-    css: ["styles.css"]
-author: "Ewa Wesolowska"
-date: "April 7, 2021"
----
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(leaflet)
 ```
 ## Busiest container ports in Europe 2018 
-
+Eva Wesolowska <br>
+April 7, 2021
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
 PortSites <- c(

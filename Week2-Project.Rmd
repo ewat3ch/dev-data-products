@@ -6,7 +6,7 @@ output:
     smaller: true
     css: ["styles.css"]
 author: "Ewa Wesolowska"
-date: "`r Sys.Date()`"
+date: "April 7, 2021"
 ---
 
 ```{r setup, include=FALSE}

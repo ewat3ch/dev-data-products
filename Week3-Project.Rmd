@@ -21,26 +21,21 @@ library(ggplot2)
 
 # Set chart margins
 m <- list(
-  l = 50,
-  r = 10,
-  b = 50,
-  t = 60,
-  pad = 4
+  l = 0,
+  r = 0,
+  b = 0,
+  t = 40
 )
-# Set camera perspective of 3D plotly chart
-list_camera = list(eye = list(x = -1.75, y = 1.25, z = 1.25))
-# Load Data
-data(diamonds, package = "ggplot2")
+
+list_camera = list(eye = list(x = -2, y = 1.25, z = 1.25))
+
+#data(diamonds, package = "ggplot2")
 data<-diamonds[sample(nrow(diamonds), 500), ]
 
-fig <- plot_ly(data, x= ~carat, y= ~cut, z=~price,color=~clarity,colors=c('#666666','#BF5B17','#F0027F','#386CB0','#FFFF99','#FDC086','#BEAED4','#7FC97F'),width = 800, height = 600)
-fig <- fig %>% add_markers(size=2.5)
-fig <- fig %>% layout(font=list(color='#0000A0',family="Times New Roman"),title='Diamonds By Cut, Carat and Price',
-                      margin = m,
-                      scene = list(xaxis = list(title = 'Carat',zerolinewidth = 1,ticklen = 6,gridwidth = 2),
-                                   yaxis = list(title = 'Cut quality',zerolinewidth = 1,ticklen = 6,gridwidth = 2),
-                                   zaxis = list(title = 'Price',zerolinewidth = 1,ticklen = 6,gridwidth = 2), camera = list_camera),
-                      paper_bgcolor = 'rgb(243, 243, 243)',
+#fig <- plot_ly(data, x= ~carat, y= ~cut,z=~price,color=~clarity,colors=c('#666666','#BF5B17','#F0027F','#386CB0','#FFFF99','#FDC086','#BEAED4','#7FC97F'),type= 'scatter3d')
+fig <- plot_ly(data, x= ~carat, y= ~cut, z=~price,color=~clarity, colors=c('#666666','#BF5B17','#F0027F','#386CB0','#FFFF99','#FDC086','#BEAED4','#7FC97F'),type= 'scatter3d', marker=list(size=2.5))
+fig <- fig %>% layout(margin=m,font=list(color='#0000A0',family="Times New Roman"),title='Diamonds By Cut, Carat and Price',scene = list(xaxis = list(title = 'Carat',zerolinewidth = 1,ticklen = 6,gridwidth = 2),yaxis = list(title = 'Cut quality',zerolinewidth = 1,ticklen = 6,gridwidth = 2),zaxis = list(title = 'Price',zerolinewidth = 1,ticklen = 6,gridwidth = 2), camera = list_camera,hight=800),
+paper_bgcolor = 'rgb(243, 243, 243)',
                       plot_bgcolor = 'rgb(243, 243, 243)',
                       annotations = list(
                         x = 1.13,

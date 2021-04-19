@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Dev Data Products
-description: Mini Project
+description: Mini Projects
 ---
 
 - [Week 2 Project](Week2-Project.html)

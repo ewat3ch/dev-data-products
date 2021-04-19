@@ -1,0 +1,60 @@
+---
+title: "Diamonds Are Forever"
+output: 
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+    css: ["styles-prj-w3.css"]
+author: "Ewa Wesolowska"
+date: April 19, 2021
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(plotly)
+library(ggplot2)
+```
+
+## 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Set chart margins
+m <- list(
+  l = 50,
+  r = 10,
+  b = 50,
+  t = 60,
+  pad = 4
+)
+# Set camera perspective of 3D plotly chart
+list_camera = list(eye = list(x = -1.75, y = 1.25, z = 1.25))
+# Load Data
+data(diamonds, package = "ggplot2")
+data<-diamonds[sample(nrow(diamonds), 500), ]
+
+fig <- plot_ly(data, x= ~carat, y= ~cut, z=~price,color=~clarity,colors=c('#666666','#BF5B17','#F0027F','#386CB0','#FFFF99','#FDC086','#BEAED4','#7FC97F'),width = 800, height = 600)
+fig <- fig %>% add_markers(size=2.5)
+fig <- fig %>% layout(font=list(color='#0000A0',family="Times New Roman"),title='Diamonds By Cut, Carat and Price',
+                      margin = m,
+                      scene = list(xaxis = list(title = 'Carat',zerolinewidth = 1,ticklen = 6,gridwidth = 2),
+                                   yaxis = list(title = 'Cut quality',zerolinewidth = 1,ticklen = 6,gridwidth = 2),
+                                   zaxis = list(title = 'Price',zerolinewidth = 1,ticklen = 6,gridwidth = 2), camera = list_camera),
+                      paper_bgcolor = 'rgb(243, 243, 243)',
+                      plot_bgcolor = 'rgb(243, 243, 243)',
+                      annotations = list(
+                        x = 1.13,
+                        y = 1.05,
+                        text = 'clarity',
+                        xref = 'paper',
+                        yref = 'paper',
+                        showarrow = FALSE
+                      ))
+fig
+```
+
+## 
+
+Thank You 
+
+

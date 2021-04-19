@@ -1,0 +1,17 @@
+slides>slide.title-slide {
+	background-image: url('img/diamonds.png');
+	background-size: 40% 50%;
+	background-repeat: no-repeat;
+}
+.title-slide hgroup h1 {
+  font-size: 20h;
+  letter-spacing: 0;
+  color: black;
+  margin-left: 50%;
+  margin-right: 5%;
+  margin-bottom: 30%;
+}
+slide>slide.test hgroup h1 {
+   font-size: 10h;
+}
+

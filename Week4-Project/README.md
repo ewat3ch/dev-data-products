@@ -1,4 +1,8 @@
-# Diamonds Are Forever
+--- 
+layout: page
+title: Diamonds Are Forever
+description: 
+---
 
 A simple application to visualize dependencies between various qualities of diamonds and there price.
 

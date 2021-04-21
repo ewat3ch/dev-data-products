@@ -60,9 +60,8 @@ article code {
 
 <h3>The diamonds dataset</h3>
 
-<p>The &#39;Diamonds are Forever&#39; application explore diamond dataset available with R Package ggplot2.
-The dataset contains the price, cut, carat and other attributes of almost 54,000 diamonds.
-Built using slidify and hosted on <a href="https://ewat3ch.shinyapps.io/diamonds_are_forever/">Diamonds Are Forever</a>: Application Access</p>
+<p>The &#39;Diamonds are Forever&#39; application explores the diamond dataset available with R Package ggplot2.
+This dataset was built using slidify and hosted on shinyapp.io as <a href="https://ewat3ch.shinyapps.io/diamonds_are_forever/">Diamonds Are Forever</a>. The application compares the price, cut, carat and clarity of almost 54,000 diamonds. </p>
 
 <pre><code class="r">library(ggplot2)
 str(diamonds)
@@ -86,16 +85,16 @@ str(diamonds)
   
 </slide>
 
-<slide class="ninety" id="slide-2" style="background:;">
+<slide class="" id="slide-2" style="background:;">
   
   <hgroup>
-    <h3>What carat value diamond I can get ?</h3>
+    <h3>What carat value of diamond can I get ?</h3>
   </hgroup>
   
   <article data-timings="">
-    <p>Having chosen price range, cut quality and clarity, application will plot available diamonds carat avaiable within those parameters.</p>
+    <p>Having chosen either the price, cut or clarity, the application will plot the available diamonds carat within those parameters.</p>
 
-<p><img height='500' width='600' src=img-week3/diamonds_are_forever.png></p>
+<p><img height='500' width='700' src=img-week4/diamonds_are_forever.png></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -111,10 +110,10 @@ str(diamonds)
   <article data-timings="">
     
 <div class="quiz quiz-multiple well" data-individual>
-  <p>James is planning to ask his girfriend, Linda  to marry him. He would like to buy Linda a diamond ring.
-Having <code>$2,500</code> in his saving account, can James still buy an &#39;Ideal&#39; diamond?</p>
+  <p>James is planning to ask his girlfriend Linda to marry him with a diamond ring. 
+Having <code>$2,500</code> in his savings account, can James still buy the &#39;ideal&#39; diamond for Linda?</p>
 
-<p>Diamond price range from lowest <code>$326</code> to <code>$18,823</code>, with quality of the cut from Fair, Good, Very Good, Premium to best as Ideal.</p>
+<p>The available price range for James&#39; diamond is from the lowest price <code>$326</code> to <code>$18,823</code>, with the quality of either:Fair, Good, Very Good or Premium.</p>
 
 <ol>
 <li><em>Yes</em></li>
@@ -133,7 +132,7 @@ Having <code>$2,500</code> in his saving account, can James still buy an &#39;Id
 </div>
 
 <div class="quiz-explanation">
-  <p>#YES! but with it will be low carat of 0.437 being 5.01 highest in the diamond dataset.</p>
+  <p>YES! However, in the diamond data set the low carat will be  0.437 and the highest being 5.01.</p>
 
 </div>
 </div>
@@ -145,13 +144,13 @@ Having <code>$2,500</code> in his saving account, can James still buy an &#39;Id
 <slide class="" id="slide-4" style="background:;">
   
   <hgroup>
-    <h3>How many diamonds available under <code>$2500</code> dollar mark ?</h3>
+    <h3>How many diamonds and their clarity are available under the <code>$2500</code> dollar mark ?</h3>
   </hgroup>
   
   <article data-timings="">
     
 <div style='float:left;width:48%;' class='centered'>
-  <pre><code class="r">ggplot(data = diamonds_2500_price) + 
+  <pre><code class="r">ggplot(data = diamonds_under_2500_price) + 
   geom_bar(mapping = aes(x = cut, fill = clarity), 
            position = &quot;dodge&quot;)
 </code></pre>
@@ -160,7 +159,7 @@ Having <code>$2,500</code> in his saving account, can James still buy an &#39;Id
 
 </div>
 <div style='float:right;width:48%;'>
-  <pre><code class="r">ggplot(diamonds_2500_price, 
+  <pre><code class="r">ggplot(diamonds_under_2500_price, 
        aes(carat, price, color=clarity)) + 
        geom_point() 
 </code></pre>
@@ -190,7 +189,7 @@ Having <code>$2,500</code> in his saving account, can James still buy an &#39;Id
     
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='What carat value diamond I can get ?'>
+        data-slide=2 title='What carat value of diamond can I get ?'>
          2
       </a>
     </li>
@@ -204,7 +203,7 @@ Having <code>$2,500</code> in his saving account, can James still buy an &#39;Id
     
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='How many diamonds available under <code>$2500</code> dollar mark ?'>
+        data-slide=4 title='How many diamonds and their clarity are available under the <code>$2500</code> dollar mark ?'>
          4
       </a>
     </li>

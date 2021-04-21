@@ -1,0 +1,100 @@
+---
+title       : Diamonds Are Forever
+subtitle    : Exploring Diamonds Dataset
+author      : Ewa Wesolowska
+job         : Coursera Student
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax, quiz, bootstrap]  # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+--- 
+
+<style>
+article p {
+  font-size: 16px;
+}
+article code {
+  font-size: 14px;
+}
+
+</style>
+
+### The diamonds dataset
+
+The 'Diamonds are Forever' application explore diamond dataset available with R Package ggplot2.
+The dataset contains the price, cut, carat and other attributes of almost 54,000 diamonds.
+Built using slidify and hosted on [Diamonds Are Forever](https://ewat3ch.shinyapps.io/diamonds_are_forever/): Application Access
+
+```{r}
+library(ggplot2)
+str(diamonds)
+```
+
+--- .ninety
+
+### What carat value diamond I can get ?
+
+Having chosen price range, cut quality and clarity, application will plot available diamonds carat avaiable within those parameters.
+
+<img height='500' width='600' src=img-week3/diamonds_are_forever.png>
+
+---  &checkbox
+
+### Quizz
+
+```{r, echo=FALSE, message=FALSE, results='hide'}
+library(dplyr)
+cut_list <- list(unique(diamonds$cut))
+
+diamonds_under_2500_price <- diamonds %>% filter(price <= 2500)
+#fair_cnt <- diamonds_2500_price %>% count(cut,sort=TRUE) %>% filter(cut=='Fair')
+#fcmean <- diamonds_2500_price %>% filter(cut=='Fair') %>% summarise(mean=mean(carat))
+#good_cnt <- diamonds_2500_price %>% count(cut,sort=TRUE) %>% filter(cut=='Good')
+#fcmean <- diamonds_2500_price %>% filter(cut=='Good') %>% summarise(mean=mean(carat))
+#very_good_cnt <- diamonds_2500_price %>% count(cut,sort=TRUE) %>% filter(cut=='Very Good')
+#fcmean <- diamonds_2500_price %>% filter(cut=='Very Good') %>% summarise(mean=mean(carat))
+#premium <- diamonds_2500_price %>% count(cut,sort=TRUE) %>% filter(cut=='Premium')
+#fcmean <- diamonds_2500_price %>% filter(cut=='Premium') %>% summarise(mean=mean(carat))
+#ideal_cnt <- diamonds_2500_price %>% count(cut,sort=TRUE) %>% filter(cut=='Ideal')
+#fcmean <- diamonds_2500_price %>% filter(cut=='Ideal') %>% summarise(mean=mean(carat))
+#summarize(mean_price=mean(price), mean_carat=mean(carat))
+
+```
+
+James is planning to ask his girfriend, Linda  to marry him. He would like to buy Linda a diamond ring.
+Having `$2,500` in his saving account, can James still buy an 'Ideal' diamond?
+
+Diamond price range from lowest `$326` to `$18,823`, with quality of the cut from Fair, Good, Very Good, Premium to best as Ideal.
+
+1. _Yes_
+2. No
+
+*** .hint
+
+Does carat matter ?
+
+*** .explanation
+
+#YES! but with it will be low carat of 0.437 being 5.01 highest in the diamond dataset.
+
+--- &twocol
+
+### How many diamonds available under `$2500` dollar mark ?
+
+*** =left
+```{r, fig.align = 'left'}
+ggplot(data = diamonds_Under_2500_price) + 
+  geom_bar(mapping = aes(x = cut, fill = clarity), 
+           position = "dodge")
+```
+***=right
+
+```{r, fig.align = 'right'}
+ggplot(diamonds_under_2500_price, 
+       aes(carat, price, color=clarity)) + 
+       geom_point() 
+```
+
+*** =fullwidth
